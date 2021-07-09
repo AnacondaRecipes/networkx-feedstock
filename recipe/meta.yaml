@@ -58,12 +58,12 @@ test:
     - networkx.tests
     - networkx.testing
     - networkx.utils
+  sourse_files:
+    - tests/
   requires:
     - pip
-    - pytest
   commands:
     - pip check
-    - pytest networkx
 
 about:
   home: https://networkx.github.io/
