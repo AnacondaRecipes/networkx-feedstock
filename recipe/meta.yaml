@@ -1,4 +1,4 @@
-{% set version = "2.5.1" %}
+{% set version = "2.6.1" %}
 
 package:
   name: networkx
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/networkx/networkx-{{ version }}.tar.gz
-  sha256: 109cd585cac41297f71103c3c42ac6ef7379f29788eb54cb751be5a663bb235a
+  sha256: bf4cb807d1bccf1593c7d0742d9127d9e04e021867299082658b0fc3907924e8
 
 build:
   number: 0
@@ -15,12 +15,18 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
-
+    - setuptools
+    - wheel
   run:
-    - python >=3.6
-    - decorator >=4.3.0,<5
+    - python >=3.7
+    - numpy >=1.19
+    - scipy >=1.5,!=1.6.1
+    - matplotlib >=3.3
+    - pandas >=1.1
+    # Optional: lxml, pygraphviz, pydot, gdal packages 
+    # provide additional functionality
 
 test:
   imports:
@@ -30,7 +36,6 @@ test:
     - networkx.algorithms.assortativity
     - networkx.algorithms.bipartite
     - networkx.algorithms.centrality
-    - networkx.algorithms.chordal
     - networkx.algorithms.coloring
     - networkx.algorithms.community
     - networkx.algorithms.components
@@ -38,6 +43,7 @@ test:
     - networkx.algorithms.flow
     - networkx.algorithms.isomorphism
     - networkx.algorithms.link_analysis
+    - networkx.algorithms.minors
     - networkx.algorithms.node_classification
     - networkx.algorithms.operators
     - networkx.algorithms.shortest_paths
@@ -49,11 +55,15 @@ test:
     - networkx.linalg
     - networkx.readwrite
     - networkx.readwrite.json_graph
+    - networkx.tests
+    - networkx.testing
     - networkx.utils
-  commands:
-    - pip check
+  sourse_files:
+    - tests/
   requires:
     - pip
+  commands:
+    - pip check
 
 about:
   home: https://networkx.github.io/
