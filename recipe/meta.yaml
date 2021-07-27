@@ -2,6 +2,7 @@
 
 package:
   name: networkx
+  # Versions 2.6, 2.6.1 have been yanked https://pypi.org/project/networkx/#history
   version: {{ version }}
 
 source:
