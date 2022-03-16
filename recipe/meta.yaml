@@ -1,14 +1,13 @@
+{% set name = "networkx" %}
 {% set version = "2.7.1" %}
 
 package:
-  name: networkx
-  # Versions 2.6, 2.6.1 have been yanked https://pypi.org/project/networkx/#history
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/n/networkx/networkx-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d1194ba753e5eed07cdecd1d23c5cd7a3c772099bd8dbd2fea366788cf4de7ba
-
 build:
   number: 0
   noarch: python
@@ -16,19 +15,19 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.7
+    - python >=3.8
     # 2021/7/28: Optional dependencies numpy, scipy, matplotlib, pandas,
     # but they can cause issues when try to build scipy or pythran,
     # see https://github.com/networkx/networkx/commit/5b86d913117ee22d9522755d607b5c6256cd57b9
     #- numpy >=1.19
-    #- scipy >=1.5,!=1.6.1
-    #- matplotlib >=3.3
-    #- pandas >=1.1
+    #- scipy >=1.8
+    #- matplotlib >=3.4
+    #- pandas >=1.3
     # Optional lxml, pygraphviz, pydot, gdal packages provide additional functionality
 
 test:
