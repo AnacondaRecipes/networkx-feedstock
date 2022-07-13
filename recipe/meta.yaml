@@ -64,10 +64,10 @@ test:
     - pip
   commands:
     - pip check
-  downstreams:
-    - pythran
-    - scikit-image
-    - pomegranate
+  #downstreams:
+  #  - pythran
+  #  - scikit-image
+  #  - pomegranate
 
 about:
   home: https://networkx.github.io/
