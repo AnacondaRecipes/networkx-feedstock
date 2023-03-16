@@ -11,7 +11,7 @@ source:
 build:
   number: 1
   skip: True  # [py<38]
-  script: {{ PYTHON }} -m pip install . -vvv --no-dep
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps
 
 requirements:
   host:
@@ -83,6 +83,8 @@ about:
   dev_url: https://github.com/networkx/networkx
 
 extra:
+  skip-lints:
+    - invalid_url   # it is common URL ...
   recipe-maintainers:
     - synapticarbors
     - ocefpaf
