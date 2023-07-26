@@ -29,6 +29,15 @@ requirements:
     #- matplotlib >=3.4
     #- pandas >=1.3
     # Optional lxml, pygraphviz, pydot, gdal packages provide additional functionality
+    - numpy >=1.20
+    - scipy >=1.8
+    - matplotlib >=3.4
+    - pandas >=1.3
+  run-constrained:
+    - lxml >=4.6
+    - pygraphviz >=1.10
+    - pydot >=1.4.2
+    - sympy >=1.10
 
 test:
   imports:
