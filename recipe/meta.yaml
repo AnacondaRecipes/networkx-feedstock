@@ -11,7 +11,7 @@ source:
 build:
   number: 1
   skip: True  # [py<38]
-  script: {{ PYTHON }} -m pip install . -vvv --no-deps
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -46,7 +46,6 @@ test:
     - networkx.algorithms.isomorphism
     - networkx.algorithms.link_analysis
     - networkx.algorithms.minors
-    - networkx.algorithms.node_classification
     - networkx.algorithms.operators
     - networkx.algorithms.shortest_paths
     - networkx.algorithms.traversal
@@ -58,7 +57,6 @@ test:
     - networkx.readwrite
     - networkx.readwrite.json_graph
     - networkx.tests
-    - networkx.testing
     - networkx.utils
   requires:
     - pip
