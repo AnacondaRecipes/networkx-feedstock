@@ -21,7 +21,7 @@ requirements:
     - wheel
   run:
     - python
-  run-constrained:
+  run_constrained:
     - numpy >=1.23
     - scipy >=1.9,!=1.11.0,!=1.11.1
     - matplotlib-base >=3.6
