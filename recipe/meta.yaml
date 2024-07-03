@@ -21,7 +21,7 @@ requirements:
     - wheel
   run:
     - python
-  run-constrained:
+  run_constrained:
     - numpy >=1.23
     - scipy >=1.9,!=1.11.0,!=1.11.1
     - matplotlib-base >=3.6
@@ -60,8 +60,10 @@ test:
     - networkx.utils
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest -v --pyargs networkx
   # downstreams:
   #   - anaconda-linter 0.1.1
   #   - mapclassify 2.5.0
