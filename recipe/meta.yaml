@@ -69,7 +69,7 @@ test:
   #   - visions 0.7.6
 
 about:
-  home: https://networkx.github.io/
+  home: https://networkx.org/
   license: BSD-3-Clause
   license_file: LICENSE.txt
   license_family: BSD
