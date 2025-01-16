@@ -1,5 +1,5 @@
 {% set name = "networkx" %}
-{% set version = "3.3" %}
+{% set version = "3.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0c127d8b2f4865f59ae9cb8aafcd60b5c70f3241ebd66f7defad7c4ab90126c9
+  sha256: 307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1
 build:
   number: 0
   skip: True  # [py<310]
@@ -17,18 +17,18 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=61.2
     - wheel
   run:
     - python
   run_constrained:
-    - numpy >=1.23
-    - scipy >=1.9,!=1.11.0,!=1.11.1
-    - matplotlib-base >=3.6
-    - pandas >=1.4
+    - numpy >=1.24
+    - scipy >=1.10,!=1.11.0,!=1.11.1
+    - matplotlib-base >=3.7
+    - pandas >=2.0
     - lxml >=4.6
-    - pygraphviz >=1.12
-    - pydot >=2.0
+    - pygraphviz >=1.14
+    - pydot >=3.0.1
     - sympy >=1.10
 
 test:
@@ -66,8 +66,9 @@ test:
     - pytest -v --pyargs networkx
   # downstreams:
   #   - anaconda-linter 0.1.1
+  #   - intake 2.0.7
   #   - mapclassify 2.5.0
-  #   - scikit-image 0.23.2
+  #   - scikit-image 0.24.0
   #   - visions 0.7.6
 
 about:
