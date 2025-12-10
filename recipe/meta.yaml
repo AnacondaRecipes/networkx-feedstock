@@ -16,8 +16,8 @@ build:
 
 requirements:
   host:
-    - python
     - pip
+    - python
     - setuptools >=77.0.3
   run:
     - python
@@ -79,12 +79,6 @@ test:
   commands:
     - pip check
     - pytest -v --pyargs networkx
-  # downstreams:
-  #   - anaconda-linter 0.1.1
-  #   - intake 2.0.7
-  #   - mapclassify 2.5.0
-  #   - scikit-image 0.24.0
-  #   - visions 0.7.6
 
 about:
   home: https://networkx.org
